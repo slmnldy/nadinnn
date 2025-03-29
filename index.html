@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>habede nadenn</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: rgba(255, 105, 180, 0.9);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        main {
+            text-align: left;
+            padding: 40px 20px;
+        }
+        .content {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .btn {
+            padding: 12px 25px;
+            font-size: 1.2em;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.3s;
+            display: block;
+        }
+        .btn:hover {
+            background-color: #d63384;
+            transform: scale(1.05);
+        }
+        .paragraph {
+            display: none;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            margin-bottom: 20px;
+        }
+        .paragraph p {
+            text-align: left;
+        }
+        .paragraph img {
+            display: block;
+            width: 250px;
+            border-radius: 10px;
+            margin: 10px auto;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: rgba(255, 105, 180, 0.9);
+            color: white;
+            margin-top: 30px;
+            font-size: 0.9em;
+        }
+    </style>
+    <script>
+        if (!sessionStorage.getItem("isLoggedIn")) {
+            window.location.href = "login.html";
+        }
+
+        function showNextParagraph(index) {
+            let paragraphs = document.querySelectorAll('.paragraph');
+            if (index < paragraphs.length) {
+                paragraphs[index].style.display = "block";
+                setTimeout(() => {
+                    paragraphs[index].style.opacity = "1";
+                }, 50);
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        Selamat Ulang Tahun Nadin Anastasya Putri! 🎉
+    </header>
+    <main>
+        <div class="content">
+            <h2>Hari Spesial Untuk Orang Spesial</h2>
+            <p>Hari ini adalah hari yang istimewa karena kamu lahir ke dunia. Bersyukur bangett sii bisa dipertemukan sama seseorang seistimewa kamu! Ehehehe 🎂🎁</p>
+
+            <button class="btn" onclick="showNextParagraph(0)">Click here!</button>
+
+            <!-- Ucapan & Gambar -->
+            <div class="paragraph">
+                <p>Assalamu'alaikum Nadinn, hari ini adalah hari yang sangat istimewa, karena seseorang yang berharga dalam hidupku sedang merayakan hari kelahirannya.</p>
+                <img src="img1.jpg" alt="Foto kenangan 1">
+                <br>
+                <button class="btn" onclick="showNextParagraph(1)">Click lagi</button>
+            </div>
+
+            <div class="paragraph">
+                <p>Aku bersyukur setiap hari karena kehadiranmu membawa kebahagiaan yang tak terukur dalam hidupku.</p>
+                <img src="img2.jpg" alt="Foto kenangan 2">
+                <br>
+                <button class="btn" onclick="showNextParagraph(2)">lagi laaa</button>
+            </div>
+
+            <div class="paragraph">
+                <p>Gweh pengen ngucapin <strong>Selamat Ulang Tahun! 🎂🎁</strong> Semoga setiap detik yang kamu lalui di hari ini dipenuhi dengan kebahagiaan, senyuman, dan cintah, hehehehe.</p>
+                <img src="img3.jpg" alt="Foto kenangan 3">
+                <br>
+                <button class="btn" onclick="showNextParagraph(3)">Click teruss</button>
+            </div>
+
+            <div class="paragraph">
+                <p>Kamu adalah anugerah terindah yang pernah aku miliki, dan aku merasa beruntung bisa menjadi bagian dari perjalanan hidupmu.</p>
+                <img src="img4.jpg" alt="Foto kenangan 4">
+                <br>
+                <button class="btn" onclick="showNextParagraph(4)">lagi lagiii</button>
+            </div>
+
+            <div class="paragraph">
+                <p>Semoga semua impian dan harapanmu menjadi kenyataan. Aku ingin melihatmu selalu tersenyum dan bahagia, karena kebahagiaanmu adalah kebahagiaanku juga, haisss</p>
+                <img src="img5.jpg" alt="Foto kenangan 5">
+                <br>
+                <button class="btn" onclick="showNextParagraph(5)">terusss</button>
+            </div>
+
+            <div class="paragraph">
+                <p>Aku ingin terus berada di sisimu, menemani setiap langkahmu, dan menjadi seseorang yang selalu mendukung serta mencintaimu dengan sepenuh hati.</p>
+                <img src="img6.jpg" alt="Foto kenangan 6">
+                <br>
+                <button class="btn" onclick="showNextParagraph(6)">lanjutttt</button>
+            </div>
+
+            <div class="paragraph">
+                <p>Terima kasih telah menjadi bagian dari hidupku, terima kasih telah mencintaiku dengan segala kekurangan dan kelebihanku.</p>
+                <img src="img7.jpg" alt="Foto kenangan 7">
+                <br>
+                <button class="btn" onclick="showNextParagraph(7)">lagii hampirr</button>
+            </div>
+
+            <div class="paragraph">
+                <p>Sekali lagi, <strong>Selamat Ulang Tahun, Cinta! 🎊🎈</strong> Semoga di usia baru ini, kamu semakin diberkahi dengan kesehatan, kebahagiaan, dan kesuksesan.</p>
+                <img src="img8.jpg" alt="Foto kenangan 8">
+                <br>
+                <button class="btn" onclick="showNextParagraph(8)">tar lagii</button>
+            </div>
+
+            <div class="paragraph">
+                <p>I love you more than I can express in words. 💕</p>
+                <img src="img9.jpg" alt="Foto kenangan 9">
+                <br>
+                <button class="btn" onclick="showNextParagraph(9)">lagiiii</button>
+            </div>
+
+            <div class="paragraph">
+                <p><strong>Bareng aku teruss yaaaa</strong></p>
+                <p><strong>With all my love,</strong></p>
+                <p><strong>Mas Aldeey 😘💖</strong></p>
+                <img src="img10.jpg" alt="Foto terakhir">
+                <button class="btn" onclick="window.location.href='download.html'">Bonuss nehh 🎁</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        &copy; 2025 Happy Birthday Nadin! | Dibuat dengan Cinta ❤️
+    </footer>
+</body>
+</html>

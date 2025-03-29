@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonus Effort Gweh 🎁</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background: rgba(255, 105, 180, 0.9);
+            color: white;
+            padding: 20px;
+            font-size: 2em;
+            font-weight: bold;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        main {
+            padding: 50px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .btn {
+            padding: 12px 25px;
+            font-size: 1.2em;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.3s;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #d63384;
+            transform: scale(1.05);
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: rgba(255, 105, 180, 0.9);
+            color: white;
+            margin-top: 30px;
+            font-size: 0.9em;
+        }
+    </style>
+    <script>
+        function downloadFile() {
+            let link = document.createElement('a');
+            link.href = "2004-2008-17-1-NAP.pdf";  // Nama file yang akan didownload
+            link.download = "2004-2008-17-1-NAP.pdf"; // Nama file saat tersimpan
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</head>
+<body>
+    <header>
+        Anggep aja bonus effort gweh 🎁
+    </header>
+    <main>
+        <div class="container">
+            <h2>Ini hadiah spesial buat kamu! 💖</h2>
+            <p>Hadiah ini dibuat dengan penuh cinta dan ketulusan. Moga kamu sukaaa yaaaa! 🥰✨</p>
+
+            <br>
+            <button class="btn" onclick="downloadFile()">Download 🎁</button>
+
+            <p>Jangan lupa dibaca yaaaaa, itung itung artikel ilmiah pertamaku hahaha</p>
+
+            <br><br>
+            <a href="index.html" class="btn">Kembali ke Halaman Utama</a>
+        </div>
+    </main>
+    <footer>
+        &copy; 2025 Happy Birthday Nadin! | Dibuat dengan Cinta ❤️
+    </footer>
+</body>
+</html>
