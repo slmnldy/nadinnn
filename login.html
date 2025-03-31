@@ -22,6 +22,7 @@
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             text-align: center;
+            max-width: 350px;
         }
         input {
             width: 100%;
@@ -46,6 +47,15 @@
             background-color: #d63384;
             transform: scale(1.05);
         }
+        .small-btn {
+            font-size: 0.9em;
+            padding: 8px 15px;
+            background-color: #ccc;
+            color: black;
+        }
+        .small-btn:hover {
+            background-color: #aaa;
+        }
     </style>
 </head>
 <body>
@@ -55,6 +65,8 @@
         <input type="password" id="password" placeholder="Password">
         <button class="btn" onclick="login()">Masuk</button>
         <p id="error" style="color: red; display: none;">Username atau password salah!</p>
+        <p>Belum punya username & password?</p>
+        <button class="btn small-btn" onclick="window.location.href='quiz.html'">Kerjakan Kuis</button>
     </div>
 
     <script>
@@ -63,7 +75,6 @@
             let pass = document.getElementById("password").value;
 
             if (user === "nadinn" && pass === "sweetseventeen") {
-                sessionStorage.setItem("isLoggedIn", true);
                 window.location.href = "index.html";
             } else {
                 document.getElementById("error").style.display = "block";

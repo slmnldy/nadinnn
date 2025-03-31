@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin-top: 50px;
+            padding: 20px;
+            background: white;
+            display: inline-block;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .btn {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #d63384;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Kuis Akses Login</h2>
+        <p>Jawab semua pertanyaan dengan benar untuk mendapatkan username dan password!</p>
+
+        <div id="question1">
+            <p><strong>1. Apa warna favorit akoo? (Isian)</strong></p>
+            <input type="text" id="answer1"><br>
+            <button class="btn" onclick="checkAnswer1()">Cek Jawaban</button>
+        </div>
+
+        <div id="question2" class="hidden">
+            <p><strong>2. Kapan si kita mulai deket? (Pilihan Ganda)</strong></p>
+            <button class="btn" onclick="checkAnswer2('Desember 2023')">Desember 2023</button>
+            <button class="btn" onclick="checkAnswer2('Oktober 2024')">Oktober 2024</button>
+            <button class="btn" onclick="checkAnswer2('Maret 2025')">Maret 2025</button>
+        </div>
+
+        <div id="question3" class="hidden">
+            <p><strong>3. Sebutkan satu hal yang aku suka dari kamu! (Isian)</strong></p>
+            <input type="text" id="answer3"><br>
+            <button class="btn" onclick="checkAnswer3()">Cek Jawaban</button>
+        </div>
+
+        <div id="question4" class="hidden">
+            <p><strong>4. Aku lebih suka kopi atau teh? (Pilihan Ganda)</strong></p>
+            <button class="btn" onclick="checkAnswer4('Kopi')">Kopi</button>
+            <button class="btn" onclick="checkAnswer4('Teh')">Teh</button>
+        </div>
+
+        <div id="question5" class="hidden">
+            <p><strong>5. Tim sepakbola favoritku? (Isian)</strong></p>
+            <input type="text" id="answer5"><br>
+            <button class="btn" onclick="checkAnswer5()">Cek Jawaban</button>
+        </div>
+
+        <div id="question6" class="hidden">
+            <p><strong>6. Hewan peliharaan favorit yang pernah aku punya? (Pilihan Ganda)</strong></p>
+            <button class="btn" onclick="checkAnswer6('Kucing')">Kucing</button>
+            <button class="btn" onclick="checkAnswer6('Tupai')">Tupai</button>
+            <button class="btn" onclick="checkAnswer6('Ikan')">Ikan</button>
+        </div>
+
+        <div id="question7" class="hidden">
+            <p><strong>7. Apa makanan favorit aku? (Isian)</strong></p>
+            <input type="text" id="answer7"><br>
+            <button class="btn" onclick="checkAnswer7()">Cek Jawaban</button>
+        </div>
+
+        <div id="question8" class="hidden">
+            <p><strong>8. Angka atau nomor favoritku? (Pilihan Ganda)</strong></p>
+            <button class="btn" onclick="checkAnswer8('7')">7</button>
+            <button class="btn" onclick="checkAnswer8('16')">16</button>
+        </div>
+
+        <div id="question9" class="hidden">
+            <p><strong>9. Nama lengkap ku? (Isian)</strong></p>
+            <input type="text" id="answer9"><br>
+            <button class="btn" onclick="checkAnswer9()">Cek Jawaban</button>
+        </div>
+
+        <div id="question10" class="hidden">
+            <p><strong>10. Kapan ulang tahun aku? (Pilihan Ganda)</strong></p>
+            <button class="btn" onclick="checkAnswer10('29 Oktober')">29 Oktober</button>
+            <button class="btn" onclick="checkAnswer10('30 Oktober')">30 Oktober</button>
+            <button class="btn" onclick="checkAnswer10('31 Oktober')">31 Oktober</button>
+        </div>
+
+        <div id="result" class="hidden">
+            <h3>Selamat! 🎉</h3>
+            <p>Berikut username dan password untuk login:</p>
+            <p><strong>Username:</strong> <span id="username">nadinn</span></p>
+            <p><strong>Password:</strong> <span id="password">sweetseventeen</span></p>
+            <p><em>Catat atau ingat baik-baik sebelum kembali ke login!</em></p>
+            <button class="btn" onclick="window.location.href='login.html'">Kembali ke Login</button>
+        </div>
+    </div>
+
+    <script>
+        function nextQuestion(current, next, correctAnswer) {
+            if (typeof correctAnswer === "string") {
+                let answer = document.getElementById("answer" + current).value.toLowerCase();
+                if (!answer.includes(correctAnswer.toLowerCase())) {
+                    alert("Jawaban salah! Coba lagi.");
+                    return;
+                }
+            }
+            document.getElementById("question" + current).classList.add("hidden");
+            document.getElementById("question" + next).classList.remove("hidden");
+        }
+
+        function checkAnswer1() { nextQuestion(1, 2, ["biru", "merah", "biru merah"]); }
+        function checkAnswer2(choice) { if (choice === "Oktober 2024") nextQuestion(2, 3); else alert("Jawaban salah! Coba lagi."); }
+        function checkAnswer3() { nextQuestion(3, 4, ["senyum", "manis", "cantik"]); }
+        function checkAnswer4(choice) { if (choice === "Teh") nextQuestion(4, 5); else alert("Jawaban salah! Coba lagi."); }
+        function checkAnswer5() { nextQuestion(5, 6, ["FC Barcelona", "Barcelona", "Barca"]); }
+        function checkAnswer6(choice) { if (choice === "Tupai") nextQuestion(6, 7); else alert("Jawaban salah! Coba lagi."); }
+        function checkAnswer7() { nextQuestion(7, 8, ["nasgor smansa", "risol"]); }
+        function checkAnswer8(choice) { if (choice === "7", "16") nextQuestion(8, 9); else alert("Jawaban salah! Coba lagi."); }
+        function checkAnswer9() { nextQuestion(9, 10, ["Muhammad Salman Nuzul Ramdhani", "M. Salman Nuzul Ramdhani"]); }
+        function checkAnswer10(choice) { 
+            if (choice === "30 Oktober") { 
+                document.getElementById("question10").classList.add("hidden");
+                document.getElementById("result").classList.remove("hidden");
+            } else {
+                alert("Jawaban salah! Coba lagi.");
+            }
+        }
+    </script>
+
+</body>
+</html>
