@@ -71,12 +71,18 @@
 
     <script>
         function login() {
-            let user = document.getElementById("username").value;
-            let pass = document.getElementById("password").value;
+            let user = document.getElementById("username").value.trim();
+            let pass = document.getElementById("password").value.trim();
+
+            console.log("Username Input:", user);
+            console.log("Password Input:", pass);
 
             if (user === "nadinn" && pass === "sweetseventeen") {
+                sessionStorage.setItem("isLoggedIn", "true");
+                console.log("Login berhasil, redirect ke index.html");
                 window.location.href = "index.html";
             } else {
+                console.log("Login gagal, username atau password salah");
                 document.getElementById("error").style.display = "block";
             }
         }
